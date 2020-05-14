@@ -1,4 +1,4 @@
-# Talk Place
+# Talk Place · [![Build Status](https://travis-ci.org/signalwerk/talk.place.svg?branch=master)](https://travis-ci.org/signalwerk/talk.place)
 
 
 ## Licenses
