@@ -1,0 +1,182 @@
+import { Head, Image } from 'mdx-deck'
+import { Notes } from 'mdx-deck'
+import Start from './src/Components/start'
+import Source from './src/Components/source'
+import Video from './src/Components/video'
+export theme from './src/theme'
+import Invert from './src/layouts/Invert'
+import ImgLayout from './src/layouts/image'
+
+
+<Head>
+  <title>Liip Talk · 19. Mai 2020</title>
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900" rel="stylesheet" />
+  <link href="./styles.css" rel="stylesheet" />
+</Head>
+
+
+
+
+export default Start
+
+
+<Video
+  loop={true}
+  src="https://cdn.jsdelivr.net/gh/signalwerk/talk.fonts2019@c45cf9b95b03f1c597db1484072bcdb80a3524ed/img/intro/intro.mp4"
+/>
+
+---
+
+### **Liip Talk · 19. Mai 2020**
+# **Place** · *Collaborative digital whiteboard* made during versusvirus
+
+
+Pascal Thormeier & Stefan Huber · Switzerland <!-- .element: className="footer" -->
+---
+
+## Content
+
+* **Team** · *diversity*
+* **Topic** · *boring over fancy*
+* **Server** · *simple*
+* **Design** · *reduced*
+* **Frontend** · *contrast*
+
+---
+
+# versusvirus
+
+* **Hackathon**
+* **Covid-19** crisis in Switzerland
+* *48 Hours* · 3. 4. 2020 – 5. 4. 2020
+
+---
+
+# Find a Team
+
+* Approached ~ 15 people with a *vision*
+* Gave the people an **anchor** but kept the outcome *open*
+
+---
+
+# Team
+
+* **Sandra** Gadient · *Clinical Project Manager*
+* **Onur** Ogul · *Journalist/Texter*
+* **Stefan** Huber · Frontend *Developer*
+* **Nils** Mäder · *UX-Designer* from Uster
+* **Alex** Jenter · Frontend *Developer*
+* **Lars** Mäder · *Interaction Designer*
+* **Pascal** Thormeier · Software *Developer*
+
+
+---
+# Team · Take away
+
+* Have a **PO-Role** at hackathons
+* *Diversity* always helps
+* **lockdown therapy** · People were motivated
+
+---
+# Find a topic
+
+* *digital whiteboard* · **first idea**
+* Two **conference calls** as preparations
+* Team was asked what to do · *broad discussions*
+---
+# Topic · Take away
+
+* It's **good** to discuss · *better involvement*
+* It's **bad** to discuss · *people commited to the first idea*
+
+---
+# 🏁 · Hackathon · 🏁
+---
+#  🚀 Digital **whiteboard** 🚀
+---
+# Why?
+
+* *Free*
+* *No Login* · only URL
+---
+
+export default ImgLayout
+
+![](./assets/board.png)
+
+---
+# Server
+
+* MongoDB
+* Express-Server
+* Websocket
+* Hosted on Heroku
+
+
+---
+export default ImgLayout
+
+![](./assets/communication.svg)
+---
+# Simple Schema
+
+
+```js
+const card = {
+  uuid: String,       // ← ID for mutations
+  deleted: Boolean,   // ← Used to tell others to delete the card
+  session: String,    // ← = Hash in URL
+  text: String,       // ← Content
+  color: Number,      // ← 🏳️‍🌈
+  x: Number,          // ← Position
+  y: Number           // ← Position
+}
+```
+
+
+---
+# URL holds it together
+
+```
+domain.xyz/board/?id=RftPD3Go
+```
+
+---
+# Atomized mutations
+
+```js
+const mutation = [{
+  type: 'card',   // ← type of mutation
+  uuid: '...',    // ← card to update
+  x: 15,          // ← New position
+  y: 48           // ← New position
+}]
+```
+---
+# Atomized mutations
+
+* Person *A* can **move** the card
+* Person *B* can **change color** of the same card
+* But **not two** can edit the same (last wins)
+* Operational Transformation would be needed for multi-user edit
+
+
+---
+# K.I.S.S.
+
+* *Server* listens to mutations and **updates DB**
+* *Client* listens to mutations and **updates store**
+* *Client* gets for **initial fetch** all Data as **mutations**
+
+---
+# Server · Take away
+
+* **Two days** to setup a real-time digital whiteboard *is short*
+* If you use in a Frontend-Framework *mutations* on store – you can send them to all «connected stores» via server
+
+---
+
+# exit 0;
+### **Thank you!**
+
+Hand over to *@thor*
