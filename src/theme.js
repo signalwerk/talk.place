@@ -1,7 +1,7 @@
 // example theme.js
 // import theme from 'mdx-deck/themes'
 import { code as theme } from "mdx-deck/themes";
-import okaidia from 'react-syntax-highlighter/styles/prism/okaidia'
+import okaidia from "react-syntax-highlighter/styles/prism/okaidia";
 
 let colors = theme.colors;
 let css = theme.css;
@@ -19,27 +19,25 @@ export default {
   //   position: 'relative',
   // },
 
-  fontSizes: [
-    '0.75rem', '1rem', '1.5rem', '2rem', '3rem'
-  ],
+  fontSizes: ["0.75rem", "1rem", "1.5rem", "2rem", "3rem"],
   prism: {
     style: okaidia
   },
   h1: {
     fontFamily: '"Work Sans", sans-serif',
-    letterSpacing: '0.02em',
+    letterSpacing: "0.02em",
     fontWeight: 900
   },
   h2: {
     fontFamily: '"Work Sans", sans-serif',
-    letterSpacing: '0.02em',
+    letterSpacing: "0.02em",
     fontWeight: 900
   },
   a: {
-    textDecoration: 'none',
+    textDecoration: "none"
   },
   strong: {
-    fontFamily: '"Work Sans", sans-serif',
+    fontFamily: '"Work Sans", sans-serif'
   },
 
   colors: {
@@ -52,9 +50,9 @@ export default {
     ...css,
     textAlign: "left",
 
-    fontSize: '16px',
-    '@media screen and (min-width:64em)': {
-      fontSize: '96px',
+    fontSize: "16px",
+    "@media screen and (min-width:64em)": {
+      fontSize: "96px"
     }
   },
   transitionDuration: 0

@@ -1,27 +1,27 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 import React from "react";
-import { color } from 'styled-system'
+import { color } from "styled-system";
 
 const Image = styled.div([], color, {
-  width: '100vw',
-  height: '100vh',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  backgroundColor: 'white',
+  width: "100vw",
+  height: "100vh",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  backgroundColor: "white",
 
-  '& a': {
-    color: 'inherit'
+  "& a": {
+    color: "inherit"
   }
-})
+});
 
 Image.defaultProps = {
-  color: 'background',
-  bg: 'text'
-}
+  color: "background",
+  bg: "text"
+};
 
+const Box = props => (
+  <Image className="layout layout-image invert">{props.children}</Image>
+);
 
-const Box = props => <Image className="layout layout-image invert">{props.children}</Image>
-
-
-export default Box
+export default Box;

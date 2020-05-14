@@ -25,7 +25,7 @@ export default class Video extends Component {
   // autoPlay
 
   render() {
-    let { src, autoPlay, loop } = this.props
+    let { src, autoPlay, loop } = this.props;
     return (
       <video
         style={{
